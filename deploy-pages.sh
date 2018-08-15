@@ -35,7 +35,7 @@ if [ $# -eq 1 ]
 fi
 git commit -m "$msg"
 
-remote add origin https://github.com/un0rsk/halvfems.git
+git remote add origin https://github.com/un0rsk/halvfems.git
 
 # Push to Github Pages.
 git push origin gh-pages
