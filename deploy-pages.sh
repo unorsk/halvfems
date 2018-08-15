@@ -20,9 +20,13 @@ npm run build
 # Copy built files to gh-pages.
 rm -rf ../halvfems-gh-pages
 mkdir ../halvfems-gh-pages
-cp -rf ./build/* ../halvfems-gh-pages
 
 cd ../halvfems-gh-pages/
+git remote add origin https://github.com/un0rsk/halvfems.git
+git push origin gh-pages
+git checkout gh-pages
+
+cp -rf ../halvfems/build/* ../
 
 # Add changes to git.
 git init
@@ -35,9 +39,5 @@ if [ $# -eq 1 ]
 fi
 git commit -m "$msg"
 
-git remote add origin https://github.com/un0rsk/halvfems.git
-
-# Push to Github Pages.
-git push origin gh-pages
 
 cd ../halvfems/
