@@ -18,11 +18,14 @@ fi
 npm run build
 
 # Copy built files to gh-pages.
+rm -rf ../halvfems-gh-pages
+mkdir ../halvfems-gh-pages
 cp -rf ./build/* ../halvfems-gh-pages
 
 cd ../halvfems-gh-pages/
 
 # Add changes to git.
+git init
 git add .
 
 # Commit changes.
@@ -31,6 +34,8 @@ if [ $# -eq 1 ]
   then msg="$1"
 fi
 git commit -m "$msg"
+
+remote add origin https://github.com/un0rsk/halvfems.git
 
 # Push to Github Pages.
 git push origin gh-pages
