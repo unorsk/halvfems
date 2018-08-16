@@ -2,12 +2,21 @@
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: space-between;
+}
+
+.CollectionContainer:after {
+  content: "";
+  margin-left: 2px;
+  margin-right: 2px;
+  flex-basis: 30%;
 }
 
 .Image {
-  width: 240px;
-  height: 160px;
+  flex-basis: 30%;
+  height: 200px;
+  /* width: calc(100vw/5);
+  height: calc(100vw/6.5); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -19,7 +28,19 @@
   cursor: pointer;
 }
 
-.Image:hover::after {
+@media screen and (min-width: 400px) and (max-width: 600px) {
+  .Image {
+    flex-basis: 45%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .Image {
+    flex-basis: 100%;
+  }
+}
+
+.Image:hover::after, .Image:active::after {
   content: "";
   position: absolute;
   bottom: 3px;
@@ -30,3 +51,33 @@
   background: skyblue;
   bottom: -6px;
 }
+
+.Image:active {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 720px;
+  height: 480px;
+  margin-left: -360px;
+  margin-top: -240px;
+  z-index: 1000;
+}
+
+/* .heart {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  background-image: url('https://abs.twimg.com/a/1446542199/img/t1/web_heart_animation.png');
+  background-position: left;
+  background-repeat: no-repeat;
+  background-size: 2900%;
+ }
+
+.heart:active {
+  animation: heart-burst .8s steps(28) 1;
+}
+
+ @keyframes heart-burst {
+  from {background-position:left;}
+  to { background-position:right;}
+ } */

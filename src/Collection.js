@@ -7,12 +7,13 @@ class Collection extends Component {
       <div className="Collection">
         <h3><span className='h3'>{this.props.title}</span></h3>
         <div className='CollectionContainer'>
-          {this.props.imgs.map(i => (<div style={{'background-image': `url(${i})`}} className='Image' />))}
+          {this.props.imgs.map(i => (<div style={{'backgroundImage': `url(${i})`}} className='Image' key={i} />))}
+          {/* {this.props.imgs.map(i => (<img src={i} alt='img' className='Image' key={i} />))} */}
         </div>
         {this.props.tags.map(t => (<span key={t} className='tag'>{t}</span>))}
       </div>
-    );
+    )
   }
 }
 
-export default Collection;
+export default Collection
