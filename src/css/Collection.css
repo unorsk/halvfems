@@ -12,11 +12,14 @@
   flex-basis: 30%;
 }
 
+.Image img {
+  width: 100%;
+  position: relative;
+}
+
 .Image {
   flex-basis: 30%;
-  height: 200px;
-  /* width: calc(100vw/5);
-  height: calc(100vw/6.5); */
+  height: auto;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -30,6 +33,10 @@
 
 @media screen and (min-width: 400px) and (max-width: 600px) {
   .Image {
+    flex-basis: 45%;
+  }
+  .CollectionContainer:after {
+    content: "";
     flex-basis: 45%;
   }
 }
