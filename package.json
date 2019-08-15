@@ -1,6 +1,6 @@
 {
   "name": "halvfems",
-  "homepage": "http://unorsk.cc",
+  "homepage": "https://photo.unorsk.cc",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,10 +11,11 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "predeploy": "npm run build --public-url https://photos.unorsk.cc",
+    "predeploy": "npm run build --public-url https://photo.unorsk.cc",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
+    "cssnano": "^4.1.10",
     "gh-pages": "^1.2.0"
   }
 }
